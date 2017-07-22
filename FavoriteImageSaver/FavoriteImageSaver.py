@@ -28,13 +28,7 @@ def on_status(status):
                 i+=1
                 response = urlopen(url_orig)
                 with open(savepath, "wb") as f:
-                    f.write(response.read())
-        print(status.text)
-        print(u"{name}({screen}) {created} via {src}\n".format(
-            name=status.author.name, 
-            screen=status.author.screen_name,
-            created=status.created_at,
-            src=status.source))            
+                    f.write(response.read())         
         
     except Exception as e:
         print("[-] Error: ", e)
